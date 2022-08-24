@@ -1,68 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>Tip Calculator</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="container" id="topContainer">
-        <div class="title">Bill total</div>
-        <div class="inputContainer">
-          <span>$</span>
-          <input
-            onkeyup="calculateBill()"
-            type="text"
-            id="billTotalInput"
-            placeholder="0.00"
-          />
-        </div>
-      </div>
-      <div class="container">
-        <div class="title">Tip</div>
-        <div class="inputContainer">
-          <span>%</span>
-          <input
-            onkeyup="calculateBill()"
-            type="text"
-            id="tipInput"
-            placeholder="10"
-          />
-        </div>
-      </div>
-      <div class="container" id="bottom">
-        <div class="splitContainer">
-          <div class="title">People</div>
-          <div class="controls">
-            <span class="buttonContainer">
-              <button class="splitButton" onclick="increasePeople()">
-                <span class="buttonText">+</span>
-              </button>
-            </span>
-            <span class="splitAmount" id="numberOfPeople">1</span>
-            <span class="buttonContainer">
-              <button class="splitButton" onclick="decreasePeople()">
-                <span class="buttonText">-</span>
-              </button>
-            </span>
-          </div>
-        </div>
-        <div class="totalContainer">
-          <div class="title">Total per Person</div>
-          <div class="total" id="perPersonTotal">$0.00</div>
-        </div>
-      </div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard </title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/logo.jpg">
+                    <h2>Dash<span class="danger">ACE</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+                <div class="sidebar">
+                    <a href="#">
+                        <span class="material-icons-sharp">grid_view</span>
+                        <h3>Dashboard</h3>
+                    </a>
+                    <a href="#" class="active">
+                        <span class="material-icons-sharp">person_outline</span>
+                        <h3>Customers</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">receipt_long</span>
+                        <h3>Orders</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">insights</span>
+                        <h3>Analytics</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">mail_outline</span>
+                        <h3>Messages</h3>
+                        <span class="message-count">26</span>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">inventory</span>
+                        <h3>Products</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">report</span>
+                        <h3>Reports</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">settings</span>
+                        <h3>Settings</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add Products</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">logout</span>
+                        <h3>Logout</h3>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <h1>Dashboard</h1>
+            <div class="date">
+                <input type="date">
+            </div>
 
-    <script type="text/javascript" src="script.js"></script>
-  </body>
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>Rs 250003</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours.</small>
+                </div>
+                <!------------------END OF SALES--------------------->
+                <div class="expenses">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Expenses</h3>
+                            <h1>Rs 25003</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>44%</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours.</small>
+                </div>
+                <!-------------------------------END OF EXPENSES--------------------------------->
+                <div class="income">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>Rs 203</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>32%</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours.</small>
+                </div>
+                <!----------------------END OF INCOME------------------->
+            </div>
+
+
+        </main>
+    </div>
+</body>
 </html>
